@@ -86,7 +86,7 @@ function displayData(forecast){
 
 	$('.todayLow').html(Math.round(forecast.daily.data[0].temperatureLow)+ "f");
 
-	$('.todayPrecip').html(forecast.daily.data[0].precipProbability*100 + "%");
+	$('.todayPrecip').html(Math.round(forecast.daily.data[0].precipProbability)*100 + "%");
 
 	$('.todayVisibility').html(Math.round(forecast.daily.data[0].visibility)+ "mi");
 
@@ -140,8 +140,6 @@ function displayData(forecast){
 	$('.sliding-panel').click(function(){
   	$(this).toggleClass('slide');
 	})
-
-
 
 
 
