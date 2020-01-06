@@ -86,13 +86,13 @@ function displayData(forecast){
 
 	$('.todayLow').html(Math.round(forecast.daily.data[0].temperatureLow)+ "f");
 
-	$('.todayPrecip').html(Math.round(forecast.daily.data[0].precipProbability)+ "%");
+	$('.todayPrecip').html(forecast.daily.data[0].precipProbability*100 + "%");
 
 	$('.todayVisibility').html(Math.round(forecast.daily.data[0].visibility)+ "mi");
 
 	$('.todayWindSpeed').html(Math.round(forecast.daily.data[0].windSpeed)+ "m/h");
 
-	$('.todayHumidity').html(Math.round(forecast.daily.data[0].humidity)+ "%");
+	$('.todayHumidity').html(Math.round(forecast.daily.data[0].humidity)*100 + "%");
 
 	// If I want to display the same information for tomorrow, change the 0 to 1
 
@@ -109,32 +109,32 @@ function displayData(forecast){
 
 	$('.todayHigh').html(Math.round(forecast.daily.data[0].temperatureHigh));
 	$('.todaySummary').html(forecast.daily.data[0].summary);
-	$('.todayPrecip').html(Math.round(forecast.daily.data[0].precipProbability)+ "%")
+	$('.todayPrecip').html(forecast.daily.data[0].precipProbability*100 + "%");
 	
 
 	$('.oneHigh').html(Math.round(forecast.daily.data[1].temperatureHigh));
 	$('.oneSummary').html(forecast.daily.data[1].summary);
-	$('.onePrecip').html(Math.round(forecast.daily.data[1].precipProbability)+ "%")
+	$('.onePrecip').html(forecast.daily.data[1].precipProbability*100 + "%");
 
 	$('.twoHigh').html(Math.round(forecast.daily.data[2].temperatureHigh));
 	$('.twoSummary').html(forecast.daily.data[2].summary);
-	$('.twoPrecip').html(Math.round(forecast.daily.data[2].precipProbability)+ "%")
+	$('.twoPrecip').html(forecast.daily.data[2].precipProbability*100 + "%");
 
 	$('.threeHigh').html(Math.round(forecast.daily.data[3].temperatureHigh));
 	$('.threeSummary').html(forecast.daily.data[3].summary);
-	$('.threePrecip').html(Math.round(forecast.daily.data[3].precipProbability)+ "%")
+	$('.threePrecip').html(forecast.daily.data[3].precipProbability*100 + "%");
 
 	$('.fourHigh').html(Math.round(forecast.daily.data[4].temperatureHigh));
 	$('.fourSummary').html(forecast.daily.data[4].summary);
-	$('.fourPrecip').html(Math.round(forecast.daily.data[4].precipProbability)+ "%")
+	$('.fourPrecip').html(forecast.daily.data[4].precipProbability*100 + "%");
 
 	$('.fiveHigh').html(Math.round(forecast.daily.data[5].temperatureHigh));
 	$('.fiveSummary').html(forecast.daily.data[5].summary);
-	$('.fivePrecip').html(Math.round(forecast.daily.data[5].precipProbability)+ "%")
+	$('.fivePrecip').html(forecast.daily.data[5].precipProbability*100 + "%");
 
 	$('.sixHigh').html(Math.round(forecast.daily.data[6].temperatureHigh));
 	$('.sixSummary').html(forecast.daily.data[6].summary);
-	$('.sixPrecip').html(Math.round(forecast.daily.data[6].precipProbability)+ "%")
+	$('.sixPrecip').html(forecast.daily.data[6].precipProbability*100 + "%");
 
 
 	$('.sliding-panel').click(function(){
