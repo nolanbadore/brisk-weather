@@ -4,10 +4,10 @@
 
 // Replace the lat/long below with the lat/long for your desired location.
 // Get your city lat/long using https://www.latlong.net/
-var latlong = '41.740681,-71.308609';
+var latlong = '42.3601, -71.058884';
 
 // Your unique API key. Place the long string of characters between the quotes.
-var apikey = '';
+var apikey = '7d5a6d21f3bdfde99d64967518f6fe95';
 
 // Access the DarkSky API for weather data. DO NOT EDIT THIS LINE.
 $.getJSON('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'+apikey+'/' + latlong)
@@ -34,10 +34,13 @@ $.getJSON('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/
 	// Another way to remove the header is to provide a button and the event
 	// to trigger what happens when the button is clicked (uncomment to use)
 
-	// $('header').append('<a class="button" href="#">Click</a>');
-	// $('header .button').click(function(){
-	//   $('header').hide();
-	// });
+	$('header').click(function(){
+  $(this).removeClass('slideDown').addClass('slideUp');
+})
+
+$('main').click(function(){
+  $('header').removeClass('slideUp').addClass('slideDown');
+})
 
 	// The following line calls a function to display
 	// the main weather information. DO NOT EDIT THIS LINE.
@@ -79,7 +82,17 @@ function displayData(forecast){
 	// (referenced by the number 0) is written as HTML inside the <div class="today"> element
 	// If I want to round this number up, I would modify the code like this
 
-	// $('.today').html(Math.round(forecast.daily.data[0].temperatureHigh));
+	$('.todayHigh').html(Math.round(forecast.daily.data[0].temperatureHigh));
+
+	$('.todayLow').html(Math.round(forecast.daily.data[0].temperatureLow)+ "f");
+
+	$('.todayPrecip').html(Math.round(forecast.daily.data[0].precipProbability)+ "%");
+
+	$('.todayVisibility').html(Math.round(forecast.daily.data[0].visibility)+ "mi");
+
+	$('.todayWindSpeed').html(Math.round(forecast.daily.data[0].windSpeed)+ "m/h");
+
+	$('.todayHumidity').html(Math.round(forecast.daily.data[0].humidity)+ "%");
 
 	// If I want to display the same information for tomorrow, change the 0 to 1
 
@@ -88,7 +101,50 @@ function displayData(forecast){
 	// If I want to display a summary of the weather
 	// (like, "scattered thundershowers...") for today
 
-	// $('.today').html(forecast.daily.data[0].summary);
+	$('.todaySummary').html(forecast.daily.data[0].summary);
+
+
+
+
+
+	$('.todayHigh').html(Math.round(forecast.daily.data[0].temperatureHigh));
+	$('.todaySummary').html(forecast.daily.data[0].summary);
+	$('.todayPrecip').html(Math.round(forecast.daily.data[0].precipProbability)+ "%")
+	
+
+	$('.oneHigh').html(Math.round(forecast.daily.data[1].temperatureHigh));
+	$('.oneSummary').html(forecast.daily.data[1].summary);
+	$('.onePrecip').html(Math.round(forecast.daily.data[1].precipProbability)+ "%")
+
+	$('.twoHigh').html(Math.round(forecast.daily.data[2].temperatureHigh));
+	$('.twoSummary').html(forecast.daily.data[2].summary);
+	$('.twoPrecip').html(Math.round(forecast.daily.data[2].precipProbability)+ "%")
+
+	$('.threeHigh').html(Math.round(forecast.daily.data[3].temperatureHigh));
+	$('.threeSummary').html(forecast.daily.data[3].summary);
+	$('.threePrecip').html(Math.round(forecast.daily.data[3].precipProbability)+ "%")
+
+	$('.fourHigh').html(Math.round(forecast.daily.data[4].temperatureHigh));
+	$('.fourSummary').html(forecast.daily.data[4].summary);
+	$('.fourPrecip').html(Math.round(forecast.daily.data[4].precipProbability)+ "%")
+
+	$('.fiveHigh').html(Math.round(forecast.daily.data[5].temperatureHigh));
+	$('.fiveSummary').html(forecast.daily.data[5].summary);
+	$('.fivePrecip').html(Math.round(forecast.daily.data[5].precipProbability)+ "%")
+
+	$('.sixHigh').html(Math.round(forecast.daily.data[6].temperatureHigh));
+	$('.sixSummary').html(forecast.daily.data[6].summary);
+	$('.sixPrecip').html(Math.round(forecast.daily.data[6].precipProbability)+ "%")
+
+
+	$('.sliding-panel').click(function(){
+  	$(this).toggleClass('slide');
+	})
+
+
+
+
+
 
 	// If I want to modify the display of the page element based on the weather
 	// I can access the "icon" property. This returns a value that can be used
@@ -221,4 +277,3 @@ function displayIcon(n){
     		// code block
 	}
 }
-
