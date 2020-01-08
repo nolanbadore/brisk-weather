@@ -9,6 +9,7 @@ header {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
   background-color: #03DAC6;
+  cursor:pointer;
   z-index: 99;
   
   @media only screen and (min-width: 45em){

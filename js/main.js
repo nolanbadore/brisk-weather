@@ -141,6 +141,9 @@ function displayData(forecast){
   	$(this).toggleClass('slide');
 	})
 
+	$('.buttonInfo').click(function(){
+  	$('.sliding-panel-info').toggleClass('slide');
+	})
 
 
 
